@@ -29,6 +29,28 @@ body {
     margin: 3.2rem 0 0 5.2rem;
 }
 
+@media(max-width: 768px) {
+    html {
+        background: hsl(257, 40%, 49%) url(../images/bg-mobile.svg) no-repeat center fixed;
+        background-size: cover;
+    }
+
+    body {
+        display: grid;
+        grid-template-areas: "logo"
+            "template"
+            "main"
+            "social-media";
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .template .illustration {
+        width: 100vh;
+        padding: 5.2rem 5.2rem 0;
+        margin: auto;
+    }
+}
+
 .main {
     grid-area: main;
     color: var(--primary-color);
@@ -67,6 +89,27 @@ body {
     color: hsl(0, 100%, 100%);
     background-color: var(--secundary-color)
 }
+@media(max-width: 768px) {
+ .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 1rem 5rem;
+    }
+
+    .main .title {
+        padding: 0;
+        font-size: 3rem;
+        margin-top: 3rem;
+    }
+
+    .main .body {
+        margin-top: 1rem;
+        padding: 0;
+    }
+}
 
 .social-media {
     grid-area: social-media;
@@ -94,4 +137,11 @@ body {
 .social-media nav li a:hover {
     border-color: var(--secundary-color);
     color: var(--secundary-color)
+}
+
+@media(max-width: 768px){
+     .social-media nav {
+        justify-content: center;
+        margin: 5rem;
+    }
 }
