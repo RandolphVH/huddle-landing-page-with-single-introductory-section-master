@@ -10,6 +10,9 @@ body {
         "template main"
         "social-media social-media";
     grid-template-columns: repeat(2, 1fr);
+    height: 100vh;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .logo {
@@ -31,27 +34,6 @@ body {
     margin: 3.2rem 0 0 5.2rem;
 }
 
-@media(max-width: 768px) {
-    html {
-        background: hsl(257, 40%, 49%) url(../images/bg-mobile.svg) no-repeat top center fixed;
-        background-size: contain;
-    }
-
-    body {
-        display: grid;
-        grid-template-areas: "logo"
-            "template"
-            "main"
-            "social-media";
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .template .illustration {
-        width: 100vh;
-        padding: 5.2rem 5.2rem 0;
-        margin: auto;
-    }
-}
 
 .main {
     grid-area: main;
@@ -64,14 +46,16 @@ body {
     font-family: 'poppins', sans-serif;
     font-weight: 600;
     margin-top: 50px;
-    padding: 15px 210px 0 0;
+    padding: 15px 0;
+    max-width: 400px;
 }
 
 .main .body {
     font-size: 1.6rem;
     font-family: 'open sans', sans-serif;
     font-weight: 400;
-    padding: 15px 170px 0 0;
+    padding: 15px 0;
+    max-width: 500px;
 }
 
 .main .register {
@@ -85,43 +69,12 @@ body {
     padding: 8px 50px 11px;
     border-radius: 70px;
     cursor: pointer;
+    box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .main .register:hover {
     color: hsl(0, 100%, 100%);
     background-color: var(--secundary-color)
-}
-
-@media(max-width: 768px) {
-    .main {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin: 1rem 5rem;
-    }
-
-    .main .title {
-        padding: 0;
-        font-size: 3rem;
-        margin-top: 3rem;
-    }
-
-    .main .body {
-        margin-top: 1rem;
-        padding: 0;
-    }
-}
-
-@media(max-width: 425px){
-    .main .title {
-        font-size: 2.4rem;
-    }
-
-    .main .body {
-        font-size: 1.4rem;
-    }
 }
 
 .social-media {
@@ -145,6 +98,7 @@ body {
     border: #fff solid 1px;
     border-radius: 50%;
     padding: 8px;
+    box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .social-media nav li a:hover {
@@ -153,8 +107,62 @@ body {
 }
 
 @media(max-width: 768px) {
+    html {
+        background: hsl(257, 40%, 49%) url(../images/bg-mobile.svg) no-repeat top center fixed;
+        background-size: contain;
+    }
+
+    body {
+        display: grid;
+        grid-template-areas: "logo"
+            "template"
+            "main"
+            "social-media";
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .template .illustration {
+        width: 100vh;
+        padding: 5.2rem 5.2rem 0;
+        margin: auto;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 1rem 5rem;
+    }
+
+    .main .title {
+        padding: 0;
+        font-size: 3rem;
+        margin-top: 3rem;
+    }
+
+    .main .body {
+        margin-top: 1rem;
+        padding: 0;
+    }
+
+    .main .register {
+        padding: 8px 70px 11px;
+    }
+
     .social-media nav {
         justify-content: center;
         margin: 5rem;
+    }
+}
+
+@media(max-width: 425px) {
+    .main .title {
+        font-size: 2.4rem;
+    }
+
+    .main .body {
+        font-size: 1.4rem;
     }
 }
